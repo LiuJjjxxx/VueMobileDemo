@@ -6,12 +6,19 @@
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "upload": "node upload.js",
+    "buildToServe": "node build/build.js && npm run upload",
     "start": "npm run dev",
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.21.4",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.3.1",
+    "vant": "^2.12.27",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -38,6 +45,7 @@
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
+    "scp2": "^0.5.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
